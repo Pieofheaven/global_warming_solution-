@@ -26,8 +26,8 @@ def advice_clarifier(message):
 
 @bot.message_handler(commands= ['advice'])
 def advice_list(message):
-    i = int(random.choices(advice, k=1))
     advice_list = advice.keys()
-    bot.send_message(message.chat.id, f'{list(advice_list)[i]}')
+    i = random.choice(list(advice_list))
+    bot.send_message(message.chat.id, f'{i}')
 
 bot.infinity_polling()
